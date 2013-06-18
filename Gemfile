@@ -6,9 +6,13 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'rails-api'
+gem 'mysql2'
+gem 'active_model_serializers'
 
-gem 'sqlite3'
-
+group :develoipment, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
