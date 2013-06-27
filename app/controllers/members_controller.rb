@@ -1,50 +1,37 @@
 class MembersController < ApplicationController
-  # GET /members
-  # GET /members.json
   def index
     @members = Member.all
 
     render json: @members
   end
 
-  # GET /members/1
-  # GET /members/1.json
   def show
     @member = Member.find(params[:id])
 
     render json: @member
   end
 
-  # POST /members
-  # POST /members.json
-  def create
-    @member = Member.new(params[:member])
+  # def members_by_session
+  #   @members = Session.find(params[:session_id]).members
 
-    if @member.save
-      render json: @member, status: :created, location: @member
-    else
-      render json: @member.errors, status: :unprocessable_entity
-    end
+  #   render json: @members
+  # end
+
+  def members_by_house
+    @members = Member.by_house(params[:house])
+
+    render json: @members
   end
 
-  # PATCH/PUT /members/1
-  # PATCH/PUT /members/1.json
-  def update
-    @member = Member.find(params[:id])
+  def members_by_party
+    @members = Member.by_party(params[:party])
 
-    if @member.update_attributes(params[:member])
-      head :no_content
-    else
-      render json: @member.errors, status: :unprocessable_entity
-    end
+    render json: @members
   end
 
-  # DELETE /members/1
-  # DELETE /members/1.json
-  def destroy
-    @member = Member.find(params[:id])
-    @member.destroy
+def members_by_house_district
+  @members = Member.by_house_district(params[:house], params[:district]).first
 
-    head :no_content
-  end
+  render json: @members
+end
 end
