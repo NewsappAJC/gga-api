@@ -47,7 +47,16 @@ class Member < ActiveRecord::Base
   has_many :member_sessions
   has_many :sessions, through: :member_sessions
 
+  default_scope order: "district_type, district_number"
+
   scope :by_house, lambda { |house| where('district_type = ?', house) }
   scope :by_party, lambda { |party| where('party = ?', party) }
   scope :by_house_district, lambda { |house, district| where('district_type = ? and district_number = ?', house, district) }
+
+  def full_name
+    name = self.name_first
+    name = name + ' "' + self.name_nickname + '"' if self.name_nickname != ''
+    name = name + ' ' + self.name_middle if self.name_middle != ''
+    name = name + ' ' + self.name_last
+  end
 end

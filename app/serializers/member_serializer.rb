@@ -1,5 +1,5 @@
 class MemberSerializer < ActiveModel::Serializer
-  attributes :id, :name_first, :name_last, :name_middle,
+  attributes :id, :full_name, :name_first, :name_last, :name_middle,
              :name_nickname, :district_type, :district_number,
              :party, :title, :birthday, :education, :occupation,
              :religion, :spouse, :cellphone,
