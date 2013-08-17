@@ -1,4 +1,19 @@
 GgaApi::Application.routes.draw do
+  # get "/sessions" => "sessions#index"
+  # get "/sessions/:id" => "sessions#show"
+
+  get "/members" => "members#index"
+  get "/members/:id" => "members#show"
+  get "/members_by_house/:house" => "members#members_by_house"
+  get "/members_by_party/:party" => "members#members_by_party"
+  get "/members_by_house/:house/district/:district" => "members#members_by_house_district"
+  # resources :sessions, except: [:new, :edit, :delete]
+  # resources :members, except: [:new, :edit, :delete]
+
+  # resources :sessions do
+  #   resources :members
+  # end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -8,10 +8,12 @@ gem 'rails', '3.2.13'
 gem 'rails-api'
 gem 'mysql2'
 gem 'active_model_serializers'
+gem 'rack-cors', require: 'rack/cors'
 
 group :develoipment, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'annotate'
 end
 
 # To use ActiveModel has_secure_password
