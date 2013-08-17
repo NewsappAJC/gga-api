@@ -11,6 +11,7 @@ gem 'active_model_serializers'
 gem 'rack-cors', require: 'rack/cors'
 
 group :develoipment, :test do
+  gem 'thin'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'annotate'

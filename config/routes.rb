@@ -1,4 +1,8 @@
 GgaApi::Application.routes.draw do
+  get "top_contributors/index"
+
+  get "top_contributions/index"
+
   # get "/sessions" => "sessions#index"
   # get "/sessions/:id" => "sessions#show"
 
@@ -7,6 +11,7 @@ GgaApi::Application.routes.draw do
   get "/members_by_house/:house" => "members#members_by_house"
   get "/members_by_party/:party" => "members#members_by_party"
   get "/members_by_house/:house/district/:district" => "members#members_by_house_district"
+  get "/members/:id/top_contributors" => "top_contributors#index"
   # resources :sessions, except: [:new, :edit, :delete]
   # resources :members, except: [:new, :edit, :delete]
 

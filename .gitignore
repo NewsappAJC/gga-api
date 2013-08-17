@@ -15,4 +15,5 @@
 /tmp
 
 database.yml
+Gemfile.lock
 
