@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -15,6 +15,10 @@ group :develoipment, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'annotate'
+end
+
+group :test do
+  gem 'rack-test', require 'rack/test'
 end
 
 # To use ActiveModel has_secure_password

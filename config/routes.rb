@@ -1,8 +1,4 @@
 GgaApi::Application.routes.draw do
-  get "top_contributors/index"
-
-  get "top_contributions/index"
-
   # get "/sessions" => "sessions#index"
   # get "/sessions/:id" => "sessions#show"
 
