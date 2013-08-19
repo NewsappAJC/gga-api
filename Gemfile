@@ -1,20 +1,26 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails-api', '0.1.0'
+gem 'mysql2', '0.3.13'
+gem 'active_model_serializers', '0.8.1'
+gem 'rack-cors', '0.2.8', require: 'rack/cors'
 
-gem 'rails-api'
-gem 'mysql2'
-gem 'active_model_serializers'
-gem 'rack-cors', require: 'rack/cors'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
 group :develoipment, :test do
-  gem 'thin'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'annotate'
+  gem 'thin', '1.5.1'
+  gem 'rspec-rails', '2.14.0'
+  gem 'factory_girl_rails', '4.2.1'
+  gem 'factory_girl', '4.2.0'
+  gem 'capybara', '2.1.0'
+  gem 'rack-test', '0.6.2', require: 'rack/test'
+  gem 'annotate', '2.5.0'
 end
 
 # To use ActiveModel has_secure_password

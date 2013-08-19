@@ -33,13 +33,13 @@
 #
 
 class Member < ActiveRecord::Base
-  set_table_name "current_members"
-  set_primary_key "id"
+  self.table_name = "current_members"
+  self.primary_key = 'id'
   has_many :member_sessions
   has_many :sessions, through: :member_sessions
   has_many :top_contributors
 
-  default_scope order: "district_type, district_number"
+  default_scope { order ("district_type, district_number") }
 
   scope :by_house, lambda { |house| where('district_type = ?', house) }
   scope :by_party, lambda { |party| where('party = ?', party) }
@@ -50,5 +50,9 @@ class Member < ActiveRecord::Base
     name = name + ' "' + self.name_nickname + '"' if self.name_nickname != ''
     name = name + ' ' + self.name_middle if self.name_middle != ''
     name = name + ' ' + self.name_last
+  end
+
+  def active_model_serilaizer
+    MemberSerializer
   end
 end

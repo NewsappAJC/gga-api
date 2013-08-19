@@ -1,17 +1,14 @@
 GgaApi::Application.routes.draw do
-  get "top_contributors/index"
-
-  get "top_contributions/index"
-
   # get "/sessions" => "sessions#index"
   # get "/sessions/:id" => "sessions#show"
-
-  get "/members" => "members#index"
-  get "/members/:id" => "members#show"
-  get "/members_by_house/:house" => "members#members_by_house"
-  get "/members_by_party/:party" => "members#members_by_party"
-  get "/members_by_house/:house/district/:district" => "members#members_by_house_district"
-  get "/members/:id/top_contributors" => "top_contributors#index"
+  namespace :api do
+    get "/members" => "members#index"
+    get "/members/:id" => "members#show"
+    get "/members_by_house/:house" => "members#members_by_house"
+    get "/members_by_party/:party" => "members#members_by_party"
+    get "/members_by_house/:house/district/:district" => "members#members_by_house_district"
+    get "/members/:id/top_contributors" => "top_contributors#index"
+  end
   # resources :sessions, except: [:new, :edit, :delete]
   # resources :members, except: [:new, :edit, :delete]
 
