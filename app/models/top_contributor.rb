@@ -16,5 +16,5 @@
 class TopContributor < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :member
-  default_scope order: "imsp_candidate_id, contribution_ranking"
+  default_scope { order("imsp_candidate_id, contribution_ranking") }
 end
