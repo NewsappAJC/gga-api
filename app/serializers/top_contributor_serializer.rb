@@ -1,5 +1,6 @@
 class TopContributorSerializer < ActiveModel::Serializer
-  attributes :member_id,
+  attributes :id,
+             :member_id,
              :imsp_candidate_id,
              :contribution_ranking,
              :contributor_name,
