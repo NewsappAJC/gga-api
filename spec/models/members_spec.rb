@@ -6,6 +6,8 @@ describe Member do
   it { should respond_to(:top_contributors) }
   it { should respond_to(:sessions) }
   it { should respond_to(:full_name) }
+  it { should respond_to(:contributions_sectors) }
+  it { should respond_to(:contributions_industries) }
 
   describe "should have proper full name" do
     it "with first, last, middle and nickname" do
