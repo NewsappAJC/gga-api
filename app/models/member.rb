@@ -38,6 +38,8 @@ class Member < ActiveRecord::Base
   has_many :member_sessions
   has_many :sessions, through: :member_sessions
   has_many :top_contributors
+  has_many :contributions_sectors
+  has_many :contributions_industries
 
   default_scope { order ("district_type, district_number") }
 

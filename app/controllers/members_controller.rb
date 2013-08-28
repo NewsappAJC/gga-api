@@ -29,9 +29,9 @@ class MembersController < ApplicationController
     render json: @members
   end
 
-def members_by_house_district
-  @members = Member.by_house_district(params[:house], params[:district]).first
+  def members_by_house_district
+    @members = Member.by_house_district(params[:house], params[:district]).first
 
-  render json: @members
-end
+    render json: @members
+  end
 end
