@@ -33,7 +33,7 @@
 #
 
 class Member < ActiveRecord::Base
-  self.table_name = "current_members"
+  # self.table_name = "current_members"
   self.primary_key = 'id'
   has_many :member_sessions
   has_many :sessions, through: :member_sessions

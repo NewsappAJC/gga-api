@@ -1,4 +1,5 @@
 GgaApi::Application.routes.draw do
+  get "contributions_sectors/index"
   # get "/sessions" => "sessions#index"
   # get "/sessions/:id" => "sessions#show"
   namespace :api do
@@ -8,6 +9,7 @@ GgaApi::Application.routes.draw do
     get "/members_by_party/:party" => "members#members_by_party"
     get "/members_by_house/:house/district/:district" => "members#members_by_house_district"
     get "/members/:id/top_contributors" => "top_contributors#index"
+    get "/members/:id/contributions_sectors" => "contributions_sectors#index"
   end
   # resources :sessions, except: [:new, :edit, :delete]
   # resources :members, except: [:new, :edit, :delete]

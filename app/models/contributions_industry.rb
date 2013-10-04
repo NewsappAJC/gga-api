@@ -15,5 +15,5 @@
 
 class ContributionsIndustry < ActiveRecord::Base
   belongs_to :contributions_sector
-  belongs_to :members
+  belongs_to :member
 end

@@ -1,6 +1,10 @@
 FactoryGirl.define do
+  sequence :id do |n|
+    n
+  end
+
   factory :member do
-    id 1
+    id
     name_first 'Joe'
     name_middle 'C'
     name_last 'Smith'
@@ -11,15 +15,38 @@ FactoryGirl.define do
   end
 
   factory :top_contributor do
-      id 1
-      imsp_candidate_id 1
-      contributor_name "Big Shot"
-      business_name "organized crime"
-      contribution_ranking 1
-      total_contribution_records 1
-      total_dollars 1000000
-      percent_of_total_contribution_records "100%"
-      percent_of_total_total_dollars "100%"
-      member
+    id
+    imsp_candidate_id 1
+    contributor_name "Big Shot"
+    business_name "organized crime"
+    contribution_ranking 1
+    total_contribution_records 1
+    total_dollars 1000000
+    percent_of_total_contribution_records "100%"
+    percent_of_total_total_dollars "100%"
+    member
+  end
+
+  factory :contributions_sector do
+    id
+    imsp_candidate_id 1
+    sector_name "Health"
+    imsp_sector_code 8
+    total_contribution_records 1
+    total_dollars 2500
+    member
+  end
+
+  factory :contributions_industry do
+    id
+    imsp_candidate_id 1
+    imsp_industry_code 45
+    industry_name "Commercial Banking"
+    imsp_sector_code 6
+    sector_name "Finance, Insurance & Real Estate"
+    total_contribution_records 3
+    total_dollars 1000
+    member
+    contributions_sector
   end
 end
