@@ -59,8 +59,16 @@ class Member < ActiveRecord::Base
     self.sponsorships.primary
   end
 
+  def primary_sponsorships_bills
+    self.sponsorships.primary.to_a.map { |s| s.bill }
+  end
+
   def secondary_sponsorships
     self.sponsorships.secondary
+  end
+
+  def secondary_sponsorships_bills
+    self.sponsorships.secondary.to_a.map { |s| s.bill }
   end
 
   def active_model_serilaizer
