@@ -1,4 +1,3 @@
-
 database.yml
 Gemfile.lock
 
@@ -18,7 +17,6 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+<<<<<<< HEAD
 *.sublime-project
 *.sublime-workspace
-
-
