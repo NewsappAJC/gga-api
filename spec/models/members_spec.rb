@@ -8,6 +8,9 @@ describe Member do
   it { should respond_to(:full_name) }
   it { should respond_to(:contributions_sectors) }
   it { should respond_to(:contributions_industries) }
+  it { should respond_to(:sponsorships) }
+  it { should respond_to(:primary_sponsorships) }
+  it { should respond_to(:secondary_sponsorships) }
 
   describe "should have proper full name" do
     it "with first, last, middle and nickname" do
@@ -87,6 +90,26 @@ describe Member do
         member2 = FactoryGirl.create(:member, id: 2, district_type: 'House', district_number: 2)
 
         Member.by_house_district('House', 1).should_not include(member2)
+      end
+    end
+  end
+
+  describe "Sponsorhips" do
+    before { @member = FactoryGirl.create(:member_with_sponsorships) }
+
+    context "primary_sponsorships" do
+      it "should include only primary sponsorships" do
+        @member.primary_sponsorships.each do |sponsorship|
+          sponsorship.sequence.should eq(1)
+        end
+      end
+    end
+
+    context "secondary_sponsorships" do
+      it "should include only secondary sponsorships" do
+        @member.secondary_sponsorships.each do |sponsorship|
+          sponsorship.sequence.should be > 1
+        end
       end
     end
   end

@@ -12,6 +12,16 @@ FactoryGirl.define do
     district_type 'House'
     district_number 1
     party 'Republican'
+
+    factory :member_with_sponsorships do
+      ignore do
+        sponsorship_count 2
+      end
+      after(:create) do |member, evaluator|
+        FactoryGirl.create_list(:sponsorship, evaluator.sponsorship_count, member: member, sequence: 1)
+        FactoryGirl.create_list(:sponsorship, evaluator.sponsorship_count, member: member, sequence: 2)
+      end
+    end
   end
 
   factory :top_contributor do
@@ -48,5 +58,15 @@ FactoryGirl.define do
     total_dollars 1000
     member
     contributions_sector
+  end
+
+  factory :bill do
+    id
+  end
+
+  factory :sponsorship do
+    id
+    bill
+    member
   end
 end

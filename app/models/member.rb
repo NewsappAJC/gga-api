@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: current_members
+# Table name: members
 #
 #  id                      :integer          not null, primary key
 #  name_first              :string(255)
@@ -40,6 +40,7 @@ class Member < ActiveRecord::Base
   has_many :top_contributors
   has_many :contributions_sectors
   has_many :contributions_industries
+  has_many :sponsorships
 
   default_scope { order ("district_type, district_number") }
 
@@ -52,6 +53,14 @@ class Member < ActiveRecord::Base
     name = name + ' "' + self.name_nickname + '"' if self.name_nickname != ''
     name = name + ' ' + self.name_middle if self.name_middle != ''
     name = name + ' ' + self.name_last
+  end
+
+  def primary_sponsorships
+    self.sponsorships.primary
+  end
+
+  def secondary_sponsorships
+    self.sponsorships.secondary
   end
 
   def active_model_serilaizer

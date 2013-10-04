@@ -11,6 +11,7 @@
 #  sector_name                :string(255)      not null
 #  total_contribution_records :integer          not null
 #  total_dollars              :integer          not null
+#  contributions_sector_id    :integer          not null
 #
 
 class ContributionsIndustry < ActiveRecord::Base
