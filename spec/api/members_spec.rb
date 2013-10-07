@@ -14,7 +14,6 @@ describe Api::MembersController, :type => :api do
   end
 
   it "should include correct full_name attribute" do
-    member = Member.first
     member_response = JSON.parse(last_response.body)[0]
     expect(member.full_name).to eq(member_response['full_name'])
   end
