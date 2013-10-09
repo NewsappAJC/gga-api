@@ -13,4 +13,5 @@ class MemberSerializer < ActiveModel::Serializer
 
   has_many :primary_sponsorships_bills
   has_many :secondary_sponsorships_bills
+  has_many :member_committees
 end

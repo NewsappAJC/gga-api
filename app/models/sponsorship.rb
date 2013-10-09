@@ -2,7 +2,7 @@
 #
 # Table name: sponsorships
 #
-#  id                 :integer          not null, primary key
+#  id                 :integer          not null
 #  member_description :string(255)
 #  member_id          :integer
 #  bill_id            :integer

@@ -2,7 +2,7 @@
 #
 # Table name: bills
 #
-#  id                :integer          not null
+#  id                :integer          not null, primary key
 #  document_type     :string(3)
 #  number            :integer
 #  session_id        :integer
@@ -28,4 +28,5 @@ describe Bill do
   it { should respond_to(:bill_status_listings) }
   it { should respond_to(:sponsorships) }
   it { should respond_to(:committees) }
+  it { should respond_to(:votes) }
 end

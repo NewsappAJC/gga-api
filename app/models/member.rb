@@ -41,6 +41,8 @@ class Member < ActiveRecord::Base
   has_many :contributions_sectors
   has_many :contributions_industries
   has_many :sponsorships
+  has_many :member_committees
+  has_many :committees, through: :member_committees
 
   default_scope { order ("district_type, district_number") }
 

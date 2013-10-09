@@ -2,7 +2,7 @@
 #
 # Table name: bills
 #
-#  id                :integer          not null
+#  id                :integer          not null, primary key
 #  document_type     :string(3)
 #  number            :integer
 #  session_id        :integer
@@ -22,4 +22,6 @@
 class Bill < ActiveRecord::Base
   self.primary_key = 'id'
   has_many :sponsorships
+  has_many :votes
+  has_many :committees
 end
