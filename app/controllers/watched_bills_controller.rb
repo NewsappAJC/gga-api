@@ -1,0 +1,2 @@
+class WatchedBillsController < ApplicationController
+end

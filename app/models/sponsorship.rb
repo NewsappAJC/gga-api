@@ -2,7 +2,7 @@
 #
 # Table name: sponsorships
 #
-#  id                 :integer          not null
+#  id                 :integer          not null, primary key
 #  member_description :string(255)
 #  member_id          :integer
 #  bill_id            :integer
@@ -11,6 +11,7 @@
 #
 
 class Sponsorship < ActiveRecord::Base
+  self.primary_key = 'id'
   belongs_to :bill
   belongs_to :member
 

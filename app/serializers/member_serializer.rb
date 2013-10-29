@@ -11,7 +11,7 @@ class MemberSerializer < ActiveModel::Serializer
              :district_address_street, :district_address_zip,
              :district_address_email, :district_address_phone
 
-  has_many :primary_sponsorships_bills
-  has_many :secondary_sponsorships_bills
-  has_many :member_committees
+  # has_many :primary_sponsorships_bills
+  # has_many :secondary_sponsorships_bills
+  # has_many :member_committees
 end

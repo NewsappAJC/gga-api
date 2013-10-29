@@ -12,6 +12,18 @@ module Api
       render json: @member
     end
 
+    def member_bills
+      @bills = Member.find(params[:id]).primary_sponsorships_bills
+
+      render json: @bills
+    end
+
+    def member_committees
+      @committees = Member.find(params[:id]).member_committees
+
+      render json: @committees
+    end
+
     # def members_by_session
     #   @members = Session.find(params[:session_id]).members
 
