@@ -27,4 +27,10 @@ class Bill < ActiveRecord::Base
   has_many :sponsorships
   has_many :votes
   has_many :committees
+  belongs_to :member
+  belongs_to :watched_bill
+
+  scope :house, -> { where( "document_type in ('HB','HR')") }
+  scope :senate, -> { where( "document_type in ('SB','SR')") }
+  scope :by_type_number, -> (type, number) { where(document_type: type, number: number) }
 end

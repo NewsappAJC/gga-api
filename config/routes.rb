@@ -12,6 +12,15 @@ GgaApi::Application.routes.draw do
     get "/members/:id/contributions_sectors" => "contributions_sectors#index"
     get "/members/:id/bills" => "members#member_bills"
     get "/members/:id/committees" => "members#member_committees"
+    get "/bills" => "bills#index"
+    get "/bills/house" => "bills#house"
+    get "/bills/senate" => "bills#senate"
+    get "/bills/count(/:id)" => "bills#count"
+    get "/bills/:id" => "bills#show"
+    get "/bills/:type/:number" => "bills#by_type_number"
+    get "/watched_bills" => "watched_bills#index"
+    get "/watched_bills/:id" => "watched_bills#show"
+    get "/watched_bills/for_category/:category" => "watched_bills#by_category"
   end
   # resources :sessions, except: [:new, :edit, :delete]
   # resources :members, except: [:new, :edit, :delete]

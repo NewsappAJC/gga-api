@@ -41,6 +41,7 @@ class Member < ActiveRecord::Base
   has_many :contributions_sectors
   has_many :contributions_industries
   has_many :sponsorships
+  has_many :bills
   has_many :member_committees
   has_many :committees, through: :member_committees
 
@@ -52,8 +53,8 @@ class Member < ActiveRecord::Base
 
   def full_name
     name = self.name_first
-    name = name + ' "' + self.name_nickname + '"' if self.name_nickname != ''
-    name = name + ' ' + self.name_middle if self.name_middle != ''
+    name = name + ' "' + self.name_nickname + '"' unless self.name_nickname.blank?
+    name = name + ' ' + self.name_middle unless self.name_middle.blank?
     name = name + ' ' + self.name_last
   end
 
