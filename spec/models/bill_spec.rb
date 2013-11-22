@@ -28,8 +28,10 @@ describe Bill do
   before { @bill = Bill.new }
   subject { @bill }
 
-  it { should respond_to(:bill_status_listings) }
+  xit { should respond_to(:bill_status_listings) }
   it { should respond_to(:sponsorships) }
   it { should respond_to(:committees) }
   it { should respond_to(:votes) }
+  it { should respond_to(:author) }
+  it { should respond_to(:coauthors) }
 end

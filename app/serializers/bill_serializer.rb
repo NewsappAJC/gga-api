@@ -16,5 +16,15 @@ class BillSerializer < ActiveModel::Serializer
              :footnotes,
              :house_sponsor_id,
              :senate_sponsor_id,
-             :summary
+             :summary,
+             :author,
+             :coauthors
+
+  def author
+    object.author
+  end
+
+  def coauthors
+    object.coauthors
+  end
 end

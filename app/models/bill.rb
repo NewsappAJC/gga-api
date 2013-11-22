@@ -33,4 +33,12 @@ class Bill < ActiveRecord::Base
   scope :house, -> { where( "document_type in ('HB','HR')") }
   scope :senate, -> { where( "document_type in ('SB','SR')") }
   scope :by_type_number, -> (type, number) { where(document_type: type, number: number) }
+
+  def author
+    self.sponsorships.primary.first
+  end
+
+  def coauthors
+    self.sponsorships.secondary
+  end
 end

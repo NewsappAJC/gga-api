@@ -17,6 +17,8 @@ GgaApi::Application.routes.draw do
     get "/bills/senate" => "bills#senate"
     get "/bills/count(/:id)" => "bills#count"
     get "/bills/:id" => "bills#show"
+    get "/bills/:id/author" => "bills#author"
+    get "/bills/:id/coauthors" => "bills#coauthors"
     get "/bills/:type/:number" => "bills#by_type_number"
     get "/watched_bills" => "watched_bills#index"
     get "/watched_bills/:id" => "watched_bills#show"

@@ -29,5 +29,15 @@ module Api
       @bill_count = BillCount.first
       render json: @bill_count
     end
+
+    def author
+      @author = Bill.find(params[:id]).author
+      render json: @author
+    end
+
+    def coauthors
+      @coauthors = Bill.find(params[:id]).coauthors
+      render json: @coauthors
+    end
   end
 end
