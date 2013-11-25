@@ -9,6 +9,8 @@
 #  updated_at    :datetime
 #  document_type :text
 #  number        :integer
+#  category      :string(255)
+#  title         :string(255)
 #
 
 require 'spec_helper'

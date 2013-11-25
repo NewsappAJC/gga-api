@@ -17,6 +17,7 @@
 #  status_description         :string(255)
 #  suffix                     :string(255)
 #  footnotes                  :text(2147483647)
+#  member_id                  :integer
 #  house_sponsor_id           :integer
 #  senate_sponsor_id          :integer
 #  summary                    :text(2147483647)
@@ -27,6 +28,7 @@ class Bill < ActiveRecord::Base
   has_many :sponsorships
   has_many :votes
   has_many :committees
+  has_many :bill_status_listings
   belongs_to :member
   belongs_to :watched_bill
 

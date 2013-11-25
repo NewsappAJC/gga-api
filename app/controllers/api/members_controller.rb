@@ -11,7 +11,7 @@ module Api
     end
 
     def member_bills
-      @bills = Member.find(params[:id]).bills
+      @bills = Member.find(params[:id]).primary_sponsorships
       render json: @bills
     end
 

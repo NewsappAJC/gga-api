@@ -17,6 +17,7 @@
 #  status_description         :string(255)
 #  suffix                     :string(255)
 #  footnotes                  :text(2147483647)
+#  member_id                  :integer
 #  house_sponsor_id           :integer
 #  senate_sponsor_id          :integer
 #  summary                    :text(2147483647)
@@ -28,10 +29,10 @@ describe Bill do
   before { @bill = Bill.new }
   subject { @bill }
 
-  xit { should respond_to(:bill_status_listings) }
   it { should respond_to(:sponsorships) }
   it { should respond_to(:committees) }
   it { should respond_to(:votes) }
   it { should respond_to(:author) }
   it { should respond_to(:coauthors) }
+  it { should respond_to(:bill_status_listings) }
 end

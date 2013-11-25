@@ -20,6 +20,8 @@ class BillSerializer < ActiveModel::Serializer
              :author,
              :coauthors
 
+  has_many :bill_status_listings
+
   def author
     object.author
   end
@@ -27,4 +29,8 @@ class BillSerializer < ActiveModel::Serializer
   def coauthors
     object.coauthors
   end
+
+  # def status
+  #     object.bill_status_listings
+  # end
 end
