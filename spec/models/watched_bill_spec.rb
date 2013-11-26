@@ -16,7 +16,7 @@
 require 'spec_helper'
 
 describe WatchedBill do
-  before {@watched_bill = WhatchedBill.new}
+  before {@watched_bill = WatchedBill.new}
   subject {@watched_bill}
 
   it { should respond_to(:bill) }

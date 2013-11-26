@@ -35,4 +35,5 @@ describe Bill do
   it { should respond_to(:author) }
   it { should respond_to(:coauthors) }
   it { should respond_to(:bill_status_listings) }
+  it { should respond_to(:versions) }
 end

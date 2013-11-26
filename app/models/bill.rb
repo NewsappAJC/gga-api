@@ -29,6 +29,7 @@ class Bill < ActiveRecord::Base
   has_many :votes
   has_many :committees
   has_many :bill_status_listings
+  has_many :versions
   belongs_to :member
   belongs_to :watched_bill
 

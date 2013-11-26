@@ -7,7 +7,7 @@ module Api
 
     def show
       @member = Member.find(params[:id])
-      render json: @member
+      render json: @member, serializer: MemberDetailSerializer
     end
 
     def member_bills

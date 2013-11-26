@@ -21,6 +21,7 @@ class BillSerializer < ActiveModel::Serializer
              :coauthors
 
   has_many :bill_status_listings
+  has_many :versions
 
   def author
     object.author

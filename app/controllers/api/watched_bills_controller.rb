@@ -6,7 +6,7 @@ module Api
     end
 
     def show
-      @watcehd_bill = WatcehdBill.find(params[:id])
+      @watcehd_bill = WatchedBill.find(params[:id])
       render json: @watcehed_bill
     end
 
