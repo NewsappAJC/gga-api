@@ -7,7 +7,7 @@ module Api
 
     def show
       @bill = Bill.find(params[:id])
-      render json: @bill
+      render json: @bill, serializer: BillShowSerializer
     end
 
     def house
@@ -22,7 +22,7 @@ module Api
 
     def by_type_number
       @bill = Bill.by_type_number(params[:type], params[:number]).first
-      render json: @bill
+      render json: @bill, serializer: BillShowSerializer
     end
 
     def count
