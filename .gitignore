@@ -1,10 +1,12 @@
 database.yml
+Gemfile.lock
 
 *.rbc
 *.sassc
 .sass-cache
 capybara-*.html
 .rspec
+.rvmrc
 /.bundle
 /vendor/bundle
 /log/*
@@ -16,3 +18,6 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+<<<<<<< HEAD
+*.sublime-project
+*.sublime-workspace
