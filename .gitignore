@@ -20,3 +20,4 @@ pickle-email-*.html
 <<<<<<< HEAD
 *.sublime-project
 *.sublime-workspace
+.DS_Store
