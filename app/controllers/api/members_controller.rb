@@ -11,13 +11,13 @@ module Api
     end
 
     def member_bills
-      @bills = Member.find(params[:id]).primary_sponsorships, callback: params[:callback]
-      render json: @bills
+      @bills = Member.find(params[:id]).primary_sponsorships
+      render json: @bills, callback: params[:callback]
     end
 
     def member_committees
-      @committees = Member.find(params[:id]).member_committees, callback: params[:callback]
-      render json: @committees
+      @committees = Member.find(params[:id]).member_committees
+      render json: @committees, callback: params[:callback]
     end
 
     # def members_by_session
