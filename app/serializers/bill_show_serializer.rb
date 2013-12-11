@@ -22,6 +22,7 @@ class BillShowSerializer < ActiveModel::Serializer
 
   has_many :bill_status_listings
   has_many :versions
+  has_many :votes
 
   def author
     object.author

@@ -18,5 +18,6 @@
 #
 
 class Vote < ActiveRecord::Base
+  self.primary_key = 'id'
   belongs_to :bill
 end
