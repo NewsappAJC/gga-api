@@ -1,4 +1,7 @@
 GgaApi::Application.routes.draw do
+  get "votes/index"
+  get "votes/show"
+  get "votes/for_bill"
   get "contributions_sectors/index"
   # get "/sessions" => "sessions#index"
   # get "/sessions/:id" => "sessions#show"
@@ -19,10 +22,14 @@ GgaApi::Application.routes.draw do
     get "/bills/:id" => "bills#show"
     get "/bills/:id/author" => "bills#author"
     get "/bills/:id/coauthors" => "bills#coauthors"
+    get "/bills/:id/votes" => "votes#for_bill"
     get "/bills/:type/:number" => "bills#by_type_number"
     get "/watched_bills" => "watched_bills#index"
     get "/watched_bills/:id" => "watched_bills#show"
     get "/watched_bills/for_category/:category" => "watched_bills#by_category"
+    get "/votes" => "votes#index"
+    get "/votes/:id" => "votes#show"
+    get "/votes/for_bill/:bill_id" => "votes#for_bill_with_detail"
   end
   # resources :sessions, except: [:new, :edit, :delete]
   # resources :members, except: [:new, :edit, :delete]

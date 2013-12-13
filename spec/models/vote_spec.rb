@@ -2,7 +2,7 @@
 #
 # Table name: votes
 #
-#  id          :integer          not null
+#  id          :integer          not null, primary key
 #  legislation :string(10)
 #  bill_id     :integer
 #  branch      :string(10)

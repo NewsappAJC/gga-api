@@ -2,7 +2,7 @@
 #
 # Table name: versions
 #
-#  id          :integer          not null
+#  id          :integer          not null, primary key
 #  bill_id     :integer
 #  version     :integer
 #  description :string(255)
