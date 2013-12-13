@@ -20,11 +20,10 @@ module Api
       render json: @committees, callback: params[:callback]
     end
 
-    # def members_by_session
-    #   @members = Session.find(params[:session_id]).members
-
-    #   render json: @members
-    # end
+    def member_votes
+      @votes = Member.find(params[:id]).member_votes
+      render json: @votes, callback: params[:callback]
+    end
 
     def members_by_house
       @members = Member.by_house(params[:house])

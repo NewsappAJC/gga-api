@@ -15,6 +15,7 @@ GgaApi::Application.routes.draw do
     get "/members/:id/contributions_sectors" => "contributions_sectors#index"
     get "/members/:id/bills" => "members#member_bills"
     get "/members/:id/committees" => "members#member_committees"
+    get "/members/:id/votes" => "members#member_votes"
     get "/bills" => "bills#index"
     get "/bills/house" => "bills#house"
     get "/bills/senate" => "bills#senate"
