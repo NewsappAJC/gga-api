@@ -10,5 +10,6 @@ class MemberSerializer < ActiveModel::Serializer
              :district_address_city, :district_address_state,
              :district_address_street, :district_address_zip,
              :district_address_email, :district_address_phone,
-             :bill_count, :session_count, :batting_average
+             :bill_count, :session_count, :batting_average,
+             :vacant
 end
