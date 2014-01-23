@@ -5,6 +5,7 @@
 #  id          :integer          not null, primary key
 #  legislation :string(10)
 #  bill_id     :integer
+#  title       :string(255)
 #  branch      :string(10)
 #  session_id  :integer
 #  caption     :string(255)

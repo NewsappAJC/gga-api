@@ -17,10 +17,12 @@
 #  status_description         :string(255)
 #  suffix                     :string(255)
 #  footnotes                  :text(2147483647)
-#  member_id                  :integer
 #  house_sponsor_id           :integer
 #  senate_sponsor_id          :integer
+#  member_id                  :integer
 #  summary                    :text(2147483647)
+#  bill_passed                :integer
+#  predictions                :float
 #
 
 class Bill < ActiveRecord::Base

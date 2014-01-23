@@ -18,7 +18,9 @@ class BillShowSerializer < ActiveModel::Serializer
              :senate_sponsor_id,
              :summary,
              :author,
-             :coauthors
+             :coauthors,
+             :bill_passed,
+             :predictions
 
   has_many :bill_status_listings
   has_many :versions

@@ -5,8 +5,8 @@
 #  id           :integer          default(0), not null, primary key
 #  member_id    :integer
 #  committee_id :integer
+#  name         :string(255)      not null
 #  role         :string(255)
-#  name         :string(255)
 #
 
 class MemberCommittee < ActiveRecord::Base

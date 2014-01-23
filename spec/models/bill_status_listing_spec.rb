@@ -2,14 +2,17 @@
 #
 # Table name: bill_status_listings
 #
-#  id                :integer          default(0), not null, primary key
+#  id                :integer          not null, primary key
 #  status_id         :integer
 #  status_listing_id :integer
 #  status_date       :datetime
 #  code              :string(10)
 #  description       :string(255)
-#  am_sub            :string(10)
+#  am_sub            :string(25)
 #  bill_id           :integer
+#  document_type     :string(10)
+#  number            :integer
+#  caption           :string(255)
 #
 
 require 'spec_helper'

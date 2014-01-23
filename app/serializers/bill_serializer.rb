@@ -12,5 +12,6 @@ class BillSerializer < ActiveModel::Serializer
              :footnotes,
              :house_sponsor_id,
              :senate_sponsor_id,
-             :summary
+             :summary,
+             :predictions
 end

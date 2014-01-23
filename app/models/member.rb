@@ -34,6 +34,10 @@
 #  imsp_candidate_id       :string(255)
 #  edited                  :integer          default(0), not null
 #  edit_date               :date
+#  bill_count              :integer
+#  session_count           :integer
+#  batting_average         :decimal(4, 3)
+#  vacant                  :string(8)
 #
 
 class Member < ActiveRecord::Base

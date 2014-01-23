@@ -8,6 +8,7 @@
 #  passed_senate :integer
 #  sent_to_gov   :integer
 #  signed_by_gov :integer
+#  vetoed        :integer
 #
 
 class BillCount < ActiveRecord::Base
