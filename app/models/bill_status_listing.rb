@@ -15,4 +15,5 @@
 class BillStatusListing < ActiveRecord::Base
   self.primary_key = "id"
   belongs_to :bill
+  default_scope { order("status_date desc")}
 end
