@@ -17,10 +17,10 @@ class BillShowSerializer < ActiveModel::Serializer
              :house_sponsor_id,
              :senate_sponsor_id,
              :summary,
-             :author,
-             :coauthors,
              :bill_passed,
-             :predictions
+             :predictions,
+             :author,
+             :coauthors
 
   has_many :bill_status_listings
   has_many :versions
