@@ -47,4 +47,8 @@ class Bill < ActiveRecord::Base
   def coauthors
     self.sponsorships.secondary
   end
+
+  def active_model_serializer
+    BillSerializer
+  end
 end
