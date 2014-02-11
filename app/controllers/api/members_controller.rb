@@ -1,7 +1,7 @@
 module Api
   class MembersController < ApplicationController
     def index
-      @members = Member.all
+      @members = Member.where("vacant = 'current'")
       render json: @members, callback: params[:callback]
     end
 
