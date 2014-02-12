@@ -8,7 +8,7 @@
 #  status_date       :datetime
 #  code              :string(10)
 #  description       :string(255)
-#  am_sub            :string(25)
+#  am_sub            :string(50)
 #  bill_id           :integer
 #  document_type     :string(10)
 #  number            :integer

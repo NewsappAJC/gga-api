@@ -3,7 +3,7 @@
 # Table name: sessions
 #
 #  is_default  :string(10)       not null
-#  id          :integer          not null, primary key
+#  id          :integer          not null
 #  description :string(255)      not null
 #  library     :string(255)      not null
 #

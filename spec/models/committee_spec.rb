@@ -3,9 +3,11 @@
 # Table name: committees
 #
 #  id             :integer          not null, primary key
-#  code           :string(10)
+#  code           :string(12)
 #  name           :string(255)
+#  description    :text(2147483647)
 #  committee_type :string(10)
+#  session_id     :integer
 #
 
 require 'spec_helper'

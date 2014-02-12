@@ -22,6 +22,8 @@
 #  status_date        :datetime
 #  caption            :string(255)
 #  summary            :text(2147483647)
+#  bill_passed        :integer
+#  predictions        :float
 #
 
 class Sponsorship < ActiveRecord::Base

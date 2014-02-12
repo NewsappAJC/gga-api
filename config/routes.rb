@@ -1,8 +1,8 @@
 GgaApi::Application.routes.draw do
-  get "votes/index"
-  get "votes/show"
-  get "votes/for_bill"
-  get "contributions_sectors/index"
+  # get "votes/index"
+  # get "votes/show"
+  # get "votes/for_bill"
+  # get "contributions_sectors/index"
   # get "/sessions" => "sessions#index"
   # get "/sessions/:id" => "sessions#show"
   namespace :api do
@@ -32,6 +32,8 @@ GgaApi::Application.routes.draw do
     get "/votes" => "votes#index"
     get "/votes/:id" => "votes#show"
     get "/votes/for_bill/:bill_id" => "votes#for_bill_with_detail"
+    get "/bill_attributes" => "bill_attributes#index"
+
   end
   # resources :sessions, except: [:new, :edit, :delete]
   # resources :members, except: [:new, :edit, :delete]

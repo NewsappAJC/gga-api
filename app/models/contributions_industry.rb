@@ -2,7 +2,7 @@
 #
 # Table name: contributions_industries
 #
-#  id                         :integer          not null, primary key
+#  id                         :integer          default(0), not null
 #  imsp_candidate_id          :integer          not null
 #  member_id                  :integer          not null
 #  imsp_industry_code         :string(255)      not null
