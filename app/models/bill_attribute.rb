@@ -104,6 +104,7 @@
 #
 
 class BillAttribute < ActiveRecord::Base
+  default_scope { where("session_id in (23,21,20)") }
   def self.as_csv
     CSV.generate do |csv|
       csv << column_names
