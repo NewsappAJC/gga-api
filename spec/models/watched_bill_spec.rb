@@ -2,15 +2,19 @@
 #
 # Table name: watched_bills
 #
-#  id            :integer          not null, primary key
-#  bill_id       :integer
-#  description   :text
-#  created_at    :datetime
-#  updated_at    :datetime
-#  document_type :text
-#  number        :integer
-#  category      :string(255)
-#  title         :string(255)
+#  id                 :integer          not null, primary key
+#  bill_id            :integer
+#  description        :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  document_type      :text
+#  number             :integer
+#  category           :string(255)
+#  title              :string(255)
+#  status_description :string(255)
+#  status_date        :datetime
+#  predictions        :float
+#  bill_passed        :boolean          default(FALSE)
 #
 
 require 'spec_helper'
