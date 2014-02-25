@@ -19,7 +19,6 @@ class BillShowSerializer < ActiveModel::Serializer
              :summary,
              :bill_passed,
              :predictions,
-             :passed_over,
              :author,
              :coauthors
 
