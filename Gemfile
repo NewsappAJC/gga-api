@@ -6,7 +6,8 @@ gem 'rails-api', '0.1.0'
 gem 'mysql2', '0.3.13'
 gem 'active_model_serializers', '0.8.1'
 gem 'rack-cors', '0.2.8', require: 'rack/cors'
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
+gem 'rails_12factor'
 
 group :development do
   gem 'better_errors'
