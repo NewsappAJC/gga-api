@@ -10,5 +10,7 @@ class WatchedBillsSerializer < ActiveModel::Serializer
              :title,
              :status_description,
              :status_date,
-             :predictions
+             :predictions,
+             :bill_passed,
+             :passed_over
 end
