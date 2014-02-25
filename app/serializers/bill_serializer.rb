@@ -2,10 +2,13 @@ class BillSerializer < ActiveModel::Serializer
   attributes :id,
              :document_type,
              :number,
+             :act_veto_number,
              :caption,
+             :latest_version_id,
              :latest_version_description,
              :latest_version_url,
              :legislation_type,
+             :status_id,
              :status_date,
              :status_description,
              :suffix,
@@ -13,5 +16,7 @@ class BillSerializer < ActiveModel::Serializer
              :house_sponsor_id,
              :senate_sponsor_id,
              :summary,
-             :predictions
+             :predictions,
+             :bill_passed,
+             :passed_over
 end
