@@ -8,7 +8,7 @@ class WatchedBillsSerializer < ActiveModel::Serializer
              :number,
              :category,
              :title,
-             :status_description
+             :status_description,
              :status_date,
              :predictions
 end
