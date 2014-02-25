@@ -8,6 +8,7 @@ class BillShowSerializer < ActiveModel::Serializer
              :latest_version_id,
              :latest_version_description,
              :latest_version_url,
+             :legislation_type,
              :status_id,
              :status_date,
              :status_description,
