@@ -14,7 +14,8 @@
 #  status_description :string(255)
 #  status_date        :datetime
 #  predictions        :float
-#  bill_passed        :boolean          default(FALSE)
+#  bill_passed        :integer          default(0)
+#  passed_over        :integer          default(0)
 #
 
 require 'spec_helper'

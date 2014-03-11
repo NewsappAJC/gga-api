@@ -3,8 +3,8 @@
 # Table name: member_votes
 #
 #  id              :integer          default(0), not null, primary key
-#  member_id       :integer
-#  vote_id         :integer
+#  member_id       :integer          not null
+#  vote_id         :integer          not null
 #  voted           :string(10)
 #  vote_code       :integer
 #  vote_date       :datetime

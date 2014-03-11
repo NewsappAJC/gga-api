@@ -24,6 +24,7 @@
 #  summary            :text(2147483647)
 #  bill_passed        :integer
 #  predictions        :float
+#  passed_over        :integer          default(0)
 #
 
 class Sponsorship < ActiveRecord::Base
