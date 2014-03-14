@@ -1,4 +1,5 @@
 GgaApi::Application.routes.draw do
+  # get "prediction_results/index"
   # get "days_left/index"
   # get "votes/index"
   # get "votes/show"
@@ -35,6 +36,7 @@ GgaApi::Application.routes.draw do
     get "/votes/for_bill/:bill_id" => "votes#for_bill_with_detail"
     get "/bill_attributes" => "bill_attributes#index"
     get "/days_left" => "days_left#index"
+    get "/predictions" => "prediction_results#index"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]

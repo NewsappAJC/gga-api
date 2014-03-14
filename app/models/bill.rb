@@ -21,8 +21,9 @@
 #  senate_sponsor_id          :integer
 #  member_id                  :integer
 #  summary                    :text(2147483647)
-#  bill_passed                :integer
+#  bill_passed                :integer          default(0)
 #  predictions                :float
+#  passed_over                :integer          default(0)
 #
 
 class Bill < ActiveRecord::Base

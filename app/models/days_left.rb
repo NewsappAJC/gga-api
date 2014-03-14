@@ -2,6 +2,7 @@
 #
 # Table name: days_left
 #
+#  id        :integer          default(0), not null, primary key
 #  days_left :integer
 #
 
