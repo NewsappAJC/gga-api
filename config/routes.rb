@@ -39,6 +39,7 @@ GgaApi::Application.routes.draw do
     get "/predictions" => "prediction_results#index"
     get "/districts" => "districts#index"
     get "/districts/:id" => "districts#show"
+    get "state" => "state#index"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]
