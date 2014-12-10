@@ -53,6 +53,7 @@ class Member < ActiveRecord::Base
   has_many :member_committees
   has_many :member_votes
   has_many :committees, through: :member_committees
+  has_one  :district
 
   default_scope { order ("district_type, district_number") }
 
