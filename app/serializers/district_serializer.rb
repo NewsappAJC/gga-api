@@ -15,14 +15,12 @@ class DistrictSerializer < ActiveModel::Serializer
 
   def race
     {
-        white:    object.white,
-        black:    object.black,
-        native_american: object.native_american,
-        asian:    object.asian,
-        pacific_islander: object.pacific_islander,
-        other:    object.other,
-        multi:    object.multi,
-        hispanic: object.hispanic
+        white:    Float(object.white) / Float(object.total_population) * 100,
+        black:    Float(object.black) / Float(object.total_population) * 100,
+        asian:    Float(object.asian) / Float(object.total_population) * 100,
+        other:    ( Float(object.native_american) + Float(object.pacific_islander) + Float(object.other) ) / Float(object.total_population) * 100,
+        multi:    Float(object.multi) / Float(object.total_population) * 100,
+        hispanic: Float(object.hispanic) / Float(object.total_population) * 100
     }
   end
 
