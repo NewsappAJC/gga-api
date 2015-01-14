@@ -24,4 +24,5 @@ class Vote < ActiveRecord::Base
   has_many :member_votes
 
   scope :for_bill, -> (bill_id) { where(bill_id: bill_id) }
+  scope :on_date, -> (date) { where("date(vote_date) = '#{date}'") }
 end

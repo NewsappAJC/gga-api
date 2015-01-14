@@ -18,5 +18,7 @@
 class BillStatusListing < ActiveRecord::Base
   self.primary_key = "id"
   belongs_to :bill
+
   default_scope { order("status_date desc") }
+  scope :on_date, -> (date) { where( "date(status_date) = '#{date}'" ) }
 end

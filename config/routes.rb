@@ -1,4 +1,6 @@
 GgaApi::Application.routes.draw do
+  get "bill_status/on_date"
+  get "legislative_day/index"
   # get "prediction_results/index"
   # get "days_left/index"
   # get "votes/index"
@@ -34,12 +36,16 @@ GgaApi::Application.routes.draw do
     get "/votes" => "votes#index"
     get "/votes/:id" => "votes#show"
     get "/votes/for_bill/:bill_id" => "votes#for_bill_with_detail"
+    get "/votes/on_date/:date" => "votes#on_date"
     get "/bill_attributes" => "bill_attributes#index"
     get "/days_left" => "days_left#index"
     get "/predictions" => "prediction_results#index"
     get "/districts" => "districts#index"
     get "/districts/:id" => "districts#show"
-    get "state" => "state#index"
+    get "/state" => "state#index"
+    get "/legislativedays" => "legislative_day#index"
+    get "/legislativedays/yesterday" => "legislative_day#yesterday"
+    get "/billevents/:date" => "bill_status#on_date"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]
