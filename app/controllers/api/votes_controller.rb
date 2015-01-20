@@ -18,4 +18,9 @@ class Api::VotesController < ApplicationController
     @votes = Vote.for_bill(params[:bill_id])
     render json: @votes, each_serializer: VoteDetailSerializer, callback: params[:callback]
   end
+
+  def on_date
+    @votes = Vote.on_date(params[:date])
+    render json: @votes, each_serializer: VoteSerializer, callback: params[:callback]
+  end
 end
