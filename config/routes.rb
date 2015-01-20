@@ -45,6 +45,8 @@ GgaApi::Application.routes.draw do
     get "/state" => "state#index"
     get "/legislativedays" => "legislative_day#index"
     get "/legislativedays/yesterday" => "legislative_day#yesterday"
+    # get "/billevents/recent" => "bill_status#recent"
+    get "/billevents/recent(/:date)" => "bill_status#recent"
     get "/billevents/:date" => "bill_status#on_date"
 
   end

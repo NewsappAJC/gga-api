@@ -21,4 +21,9 @@ class BillStatusListing < ActiveRecord::Base
 
   default_scope { order("status_date desc") }
   scope :on_date, -> (date) { where( "date(status_date) = '#{date}'" ) }
+  scope :recent_events, -> (date = Date.today) { where("date(status_date) = '#{self.last_date_before(date)}'")}
+
+  def self.last_date_before (date = Date.today)
+    where("date(status_date) <= '#{date}'").maximum("date(status_date)")
+  end
 end
