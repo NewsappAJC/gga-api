@@ -51,7 +51,7 @@ GgaApi::Application.routes.draw do
     get "/billevents/:date" => "bill_status#on_date"
     get "/days" => "days#index"
     get "/days/yesterday" => "days#yesterday"
-    get "days/recent(/:date)" => "days#recent"
+    get "/days/recent(/:date)" => "days#recent"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]
