@@ -1,8 +1,6 @@
 class VoteSerializer < ActiveModel::Serializer
   attributes :id,
-             # :vote_id,
              :legislation,
-             :bill_id,
              :branch,
              :session_id,
              :caption,

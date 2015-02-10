@@ -20,9 +20,13 @@
 
 class Vote < ActiveRecord::Base
   self.primary_key = 'id'
-  belongs_to :bill
+  has_many :bills_votes
+  has_many :bills, through: :bills_votes
   has_many :member_votes
 
-  scope :for_bill, -> (bill_id) { where(bill_id: bill_id) }
   scope :on_date, -> (date) { where("date(vote_date) = '#{date}'") }
+
+  def bills_minimal
+    self.bills.select(:id, :document_type, :number)
+  end
 end
