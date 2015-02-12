@@ -11,4 +11,6 @@ class VoteSerializer < ActiveModel::Serializer
              :excused,
              :nays,
              :yeas
+
+  has_many :bills_votes, key: :bills
 end

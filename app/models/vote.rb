@@ -29,4 +29,8 @@ class Vote < ActiveRecord::Base
   def bills_minimal
     self.bills.select(:id, :document_type, :number)
   end
+
+  def active_model_serializer
+    VoteSerializer
+  end
 end

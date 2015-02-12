@@ -22,7 +22,7 @@ module Api
 
     def on_date
       @votes = Vote.on_date(params[:date])
-      render json: @votes, each_serializer: VoteSerializer, callback: params[:callback]
+      render json: @votes, callback: params[:callback]
     end
   end
 end
