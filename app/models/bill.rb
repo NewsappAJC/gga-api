@@ -29,7 +29,8 @@
 class Bill < ActiveRecord::Base
   self.primary_key = 'id'
   has_many :sponsorships
-  has_many :votes
+  has_many :bills_votes
+  has_many :votes, through: :bills_votes
   has_many :member_votes
   has_many :committees
   has_many :bill_status_listings
