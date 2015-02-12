@@ -27,6 +27,9 @@ class MemberVote < ActiveRecord::Base
   self.primary_key = "id"
   belongs_to :vote
   belongs_to :member
-  belongs_to :bill
   default_scope { order("vote_date desc") }
+
+  def bills_votes
+    self.vote.bills_votes
+  end
 end

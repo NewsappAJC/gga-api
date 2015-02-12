@@ -5,5 +5,10 @@ class MemberVoteSerializer < ActiveModel::Serializer
              :vote_date,
              :caption,
              :legislation,
-             :voted
+             :voted,
+             :bills
+
+  def bills
+    object.bills_votes
+  end
 end
