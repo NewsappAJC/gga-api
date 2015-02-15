@@ -4,7 +4,7 @@ class MemberVoteSerializer < ActiveModel::Serializer
              :vote_id,
              :vote_date,
              :caption,
-             :legislation,
+             # :legislation,
              :voted,
              :bills
 
