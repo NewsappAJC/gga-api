@@ -35,6 +35,7 @@ class Bill < ActiveRecord::Base
   has_many :committees
   has_many :bill_status_listings
   has_many :versions
+  has_many :predictions_history
   belongs_to :member
   belongs_to :watched_bill
 

@@ -5,6 +5,7 @@ class BillShowSerializer < BillSerializer
   has_many :bill_status_listings
   has_many :versions
   has_many :votes
+  has_many :predictions_history
 
   def author
     object.author
