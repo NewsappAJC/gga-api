@@ -39,5 +39,30 @@ module Api
       @coauthors = Bill.find(params[:id]).coauthors
       render json: @coauthors, callback: params[:callback]
     end
+
+    def passed_house
+      @bills = Bill.passed_house
+      render json: @bills, callback: params[:callback]
+    end
+
+    def passed_senate
+      @bills = Bill.passed_senate
+      render json: @bills, callback: params[:callback]
+    end
+
+    def sent_to_governor
+      @bills = Bill.sent_to_governor
+      render json: @bills, callback: params[:callback]
+    end
+
+    def signed
+      @bills = Bill.signed
+      render json: @bills, callback: params[:callback]
+    end
+
+    def vetoed
+      @bills = Bill.vetoed
+      render json: @bills, callback: params[:callback]
+    end
   end
 end
