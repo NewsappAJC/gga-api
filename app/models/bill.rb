@@ -41,6 +41,8 @@ class Bill < ActiveRecord::Base
 
   scope :house, -> { where( "document_type in ('HB','HR')") }
   scope :senate, -> { where( "document_type in ('SB','SR')") }
+  scope :bills, -> { where( "document_type in ('HB','SB')") }
+  scope :resolutions, -> { where( "document_type in ('HR','SR')") }
   scope :by_type_number, -> (type, number) { where(document_type: type, number: number) }
 
   def author
@@ -49,6 +51,26 @@ class Bill < ActiveRecord::Base
 
   def coauthors
     self.sponsorships.secondary
+  end
+
+  def self.passed_house
+    BillStatusListing.where("status_id = 100 and document_type in ('HB','SB')").to_a.map { |s| s.bill }
+  end
+
+  def self.passed_senate
+    BillStatusListing.where("status_id = 99 and document_type in ('HB','SB')").to_a.map { |s| s.bill }
+  end
+
+  def self.sent_to_governor
+    BillStatusListing.where("status_id in(108,109) and document_type in ('HB','SB')").to_a.map { |s| s.bill }
+  end
+
+  def self.signed
+    BillStatusListing.where("status_id = -1").to_a.map { |s| s.bill }
+  end
+
+  def self.vetoed
+    BillStatusListing.where("status_id = -1 and description like 'V%'").to_a.map { |s| s.bill }
   end
 
   def active_model_serializer
