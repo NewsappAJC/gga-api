@@ -3,6 +3,7 @@ class Day < ActiveRecord::Base
 
   scope :yesterday, -> { where("legislative_day_date < '#{Time.now.to_date}'").last }
   scope :recent, -> (day = Date.today) { where("legislative_day_date <= '#{day}'").last }
+  default_scope { where("legislative_day_date <= '#{Time.now.to_date}'") }
 
   def previous (num = 1)
     Day.find(self.id > num ? self.id - num : 1)
