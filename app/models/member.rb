@@ -60,6 +60,7 @@ class Member < ActiveRecord::Base
   scope :by_house, lambda { |house| where('district_type = ?', house) }
   scope :by_party, lambda { |party| where('party = ?', party) }
   scope :by_house_district, lambda { |house, district| where('district_type = ? and district_number = ?', house, district) }
+  scope :by_last_name, lambda { |lname| where("name_last like ?", "#{lname}%") }
 
   def full_name
     name = self.name_first

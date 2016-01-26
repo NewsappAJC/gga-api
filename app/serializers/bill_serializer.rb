@@ -18,5 +18,6 @@ class BillSerializer < ActiveModel::Serializer
              :summary,
              :predictions,
              :bill_passed,
-             :passed_over
+             :passed_over,
+             :category
 end

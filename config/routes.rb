@@ -17,6 +17,7 @@ GgaApi::Application.routes.draw do
     get "/members_by_party/:party" => "members#members_by_party"
     # get "/members_by_house/:house/district/:district" => "members#members_by_house_district"
     get "/members_by_district/:house/:district" => "members#members_by_house_district"
+    get "/members_by_last_name/:lname" => "members#by_last_name"
     get "/members/:id/top_contributors" => "top_contributors#index"
     get "/members/:id/contributions_sectors" => "contributions_sectors#index"
     get "/members/:id/bills" => "members#member_bills"
