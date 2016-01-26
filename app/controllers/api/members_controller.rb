@@ -39,5 +39,10 @@ module Api
       @members = Member.by_house_district(params[:house], params[:district]).first
       render json: @members, callback: params[:callback]
     end
+
+    def by_last_name
+      @members = Member.by_last_name(params[:lname])
+      render json: @members, callback: params[:callback]
+    end
   end
 end
