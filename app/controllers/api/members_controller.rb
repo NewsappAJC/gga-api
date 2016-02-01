@@ -44,5 +44,10 @@ module Api
       @members = Member.by_last_name(params[:lname])
       render json: @members, callback: params[:callback]
     end
+
+    def members_by_county
+      @members = County.by_name(params[:county]).first.members.current
+      render json: @members, callback: params[:callback]
+    end
   end
 end
