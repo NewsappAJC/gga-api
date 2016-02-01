@@ -59,6 +59,7 @@ GgaApi::Application.routes.draw do
     get "/days" => "days#index"
     get "/days/yesterday" => "days#yesterday"
     get "/days/recent(/:date)" => "days#recent"
+    get "/counties" => "counties#index"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]
