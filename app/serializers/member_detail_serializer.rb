@@ -4,6 +4,7 @@ class MemberDetailSerializer < MemberSerializer
   has_one  :district
   has_many :top_contributors
   has_many :member_votes
+  has_many :counties
 
   def bills
     object.primary_sponsorships

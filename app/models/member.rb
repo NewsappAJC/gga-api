@@ -50,9 +50,11 @@ class Member < ActiveRecord::Base
   has_many :contributions_industries
   has_many :sponsorships
   has_many :bills
-  has_many :member_committees
   has_many :member_votes
+  has_many :member_committees
   has_many :committees, through: :member_committees
+  has_many :county_members
+  has_many :counties, through: :county_members
   has_one  :district
 
   default_scope { order ("district_type, district_number") }
@@ -61,6 +63,7 @@ class Member < ActiveRecord::Base
   scope :by_party, lambda { |party| where('party = ?', party) }
   scope :by_house_district, lambda { |house, district| where('district_type = ? and district_number = ?', house, district) }
   scope :by_last_name, lambda { |lname| where("name_last like ?", "#{lname}%") }
+  scope :current, lambda { where("vacant = 'current'") }
 
   def full_name
     name = self.name_first
