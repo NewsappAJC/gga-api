@@ -41,7 +41,7 @@ module Api
     end
 
     def by_last_name
-      @members = Member.by_last_name(params[:lname])
+      @members = Member.current.by_last_name(params[:lname])
       render json: @members, callback: params[:callback]
     end
 
