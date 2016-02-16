@@ -55,11 +55,17 @@ GgaApi::Application.routes.draw do
     get "/legislativedays/yesterday" => "legislative_day#yesterday"
     # get "/billevents/recent" => "bill_status#recent"
     get "/billevents/recent(/:date)" => "bill_status#recent"
+    get "/billevents/summary(/:date)" => "bill_status#summary"
     get "/billevents/:date" => "bill_status#on_date"
     get "/days" => "days#index"
     get "/days/yesterday" => "days#yesterday"
     get "/days/recent(/:date)" => "days#recent"
     get "/counties" => "counties#index"
+    get "/meetings" => "committee_meetings#index"
+    get "/meetings/today" => "committee_meetings#today"
+    get "/meetings/tomorrow" => "committee_meetings#tomorrow"
+    get "/meetings/this_week" => "committee_meetings#this_week"
+    get "/meetings/next_week" => "committee_meetings#next_week"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]
