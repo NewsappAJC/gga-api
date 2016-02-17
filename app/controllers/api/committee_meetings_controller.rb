@@ -6,7 +6,8 @@ module Api
     end
 
     def today
-      @meetings = CommitteeMeeting.today
+      date = params[:date] || Date.today.strftime("%Y-%m-%d")
+      @meetings = CommitteeMeeting.today(date)
       render json: @meetings, callback: params[:callback]
     end
 
@@ -16,13 +17,16 @@ module Api
     end
 
     def this_week
-      @meetings = CommitteeMeeting.this_week
+      date = params[:date] || Date.today.strftime("%Y-%m-%d")
+      @meetings = CommitteeMeeting.this_week(date)
       render json: @meetings, callback: params[:callback]
     end
 
     def next_week
-      @meetings = CommitteeMeeting.next_week
+      date = params[:date] || Date.today.strftime("%Y-%m-%d")
+      @meetings = CommitteeMeeting.next_week(date)
       render json: @meetings, callback: params[:callback]
     end
   end
 end
+
