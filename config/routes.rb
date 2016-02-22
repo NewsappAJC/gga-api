@@ -66,6 +66,7 @@ GgaApi::Application.routes.draw do
     get "/meetings/tomorrow(/:date)" => "committee_meetings#tomorrow"
     get "/meetings/this_week(/:date)" => "committee_meetings#this_week"
     get "/meetings/next_week(/:date)" => "committee_meetings#next_week"
+    get "/meetings/:chamber/today(/:date)" => "committee_meetings#by_chamber_today"
 
   end
   # resources :sessions, except: [:new, :edit, :delete]

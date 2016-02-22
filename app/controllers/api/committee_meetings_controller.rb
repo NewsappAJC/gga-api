@@ -27,6 +27,13 @@ module Api
       @meetings = CommitteeMeeting.next_week(date)
       render json: @meetings, callback: params[:callback]
     end
+
+    def by_chamber_today
+      date = params[:date] || Date.today.strftime("%Y-%m-%d")
+      chamber = params[:chamber]
+      @meetings = CommitteeMeeting.by_chamber(chamber).today(date)
+      render json: @meetings, callback: params[:callback]
+    end
   end
 end
 

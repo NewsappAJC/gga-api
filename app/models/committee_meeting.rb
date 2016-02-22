@@ -5,5 +5,6 @@ class CommitteeMeeting < ActiveRecord::Base
   scope :tomorrow, -> { where("ajc_date = '#{Date.tomorrow}'") }
   scope :this_week, -> (date = Date.today.strftime("%Y-%m-%d")) { where("ajc_date BETWEEN ? AND ?", Date.parse(date).beginning_of_week, Date.parse(date).end_of_week) }
   scope :next_week, -> (date = Date.today.strftime("%Y-%m-%d")) { where("ajc_date BETWEEN ? AND ?", Date.parse(date).next_week, Date.parse(date).next_week.end_of_week) }
+  scope :by_chamber, -> (chamber) { where(chamber: chamber)}
   default_scope { order(:ajc_date) }
 end
