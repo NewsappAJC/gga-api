@@ -18,13 +18,15 @@ module Api
 
     def this_week
       date = params[:date] || Date.today.strftime("%Y-%m-%d")
-      @meetings = CommitteeMeeting.this_week(date)
+      chamber = params[:chamber]
+      @meetings = CommitteeMeeting.by_chamber(chamber).this_week(date)
       render json: @meetings, callback: params[:callback]
     end
 
     def next_week
       date = params[:date] || Date.today.strftime("%Y-%m-%d")
-      @meetings = CommitteeMeeting.next_week(date)
+      chamber = params[:chamber]
+      @meetings = CommitteeMeeting.by_chamber(chamber).next_week(date)
       render json: @meetings, callback: params[:callback]
     end
 
