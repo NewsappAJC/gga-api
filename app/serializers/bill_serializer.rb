@@ -19,5 +19,6 @@ class BillSerializer < ActiveModel::Serializer
              :predictions,
              :bill_passed,
              :passed_over,
+             :vetoed,
              :category
 end
