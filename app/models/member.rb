@@ -36,7 +36,7 @@
 #  edit_date               :date
 #  bill_count              :integer
 #  session_count           :integer
-#  batting_average         :decimal(4, 3)
+#  batting_average         :string(4)
 #  vacant                  :string(8)
 #
 

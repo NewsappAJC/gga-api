@@ -3,7 +3,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 gem 'rails-api', '0.1.0'
-gem 'mysql2', '0.3.13'
+gem 'mysql2', '0.3.21'
 gem 'active_model_serializers', '0.8.1'
 gem 'rack-cors', '0.2.8', require: 'rack/cors'
 #gem 'newrelic_rpm'
